@@ -13,12 +13,11 @@ const runInitialState = {
 
 
 export const getRuns = (state = runInitialState, action ) => {
-  const {payload, type } = action
-  switch(type){
+  switch(action.type){
     case `GET_RUNS`: 
     return  {
       ...state,
-      arr: payload,
+      arr: action.payload,
       loading: false
     }
     default: return state
