@@ -14,3 +14,23 @@ export const getRuns = () => async (dispatch) => {
     console.error(error.message)
   }
 }
+
+export const getSearchItems = () => async (dispatch) => {
+  const token = process.env.REACT_APP_YELP_KEY
+  const config = {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    }
+  }
+  try {
+    const res = await axios.get('https://api.yelp.com/v3/businesses/search?term=deli&longitude=-98.491142&latitude=29.424349', config)
+    
+    console.log(res.data)
+    dispatch({
+      type: `GET_YELP`,
+      payload: res.data
+    })
+  } catch (error) {
+    console.log(`Yelp EROROR`)
+  }
+}

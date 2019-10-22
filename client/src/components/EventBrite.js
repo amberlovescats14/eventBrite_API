@@ -10,17 +10,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const API_KEY = process.env.TEST
 
 
 
 
 
 const EventBrite = (props) => {
-  const {test, runs, getRuns} = props
-  const {loading, arr} = runs
- const {events } = arr
-  console.log(`KEY: `, API_KEY)
+  const { runs, getRuns} = props
+  const { arr} = runs
   const classes = useStyles();
   useEffect(()=> {
     getRuns()
@@ -28,8 +25,11 @@ const EventBrite = (props) => {
   return (
     <div>
       <h1>eventbrite</h1>
-      {console.log(arr)}
-      <div>sadf{process.env.REACT_KEY_TEST}</div>
+      <Paper className={classes.root}>
+        <Typography>HI</Typography>
+      </Paper>
+      {console.log(arr.events)}
+
     
     </div>
   )

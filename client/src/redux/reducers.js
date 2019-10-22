@@ -24,7 +24,25 @@ export const getRuns = (state = runInitialState, action ) => {
   }
 }
 
+const yelpInitialState = {
+  arr: [],
+  loading: true
+}
+
+export const getSearchItems = (state = yelpInitialState, action) => {
+  switch(action.type){
+    case `GET_YELP`:
+    return {
+      ...state,
+      arr: action.payload,
+      loading: false
+    };
+    default: return state
+  }
+}
+
 export default combineReducers({
   test: testing,
-  runs: getRuns
+  runs: getRuns,
+  yelp: getSearchItems
 })

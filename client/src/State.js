@@ -4,6 +4,10 @@ export default {
   runs: {
     arr: [],
     loading: true
+  },
+  yelp: {
+    arr: [],
+    loading: true
   }
  
 }
