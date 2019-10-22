@@ -17,20 +17,26 @@ export const getRuns = () => async (dispatch) => {
 
 export const getSearchItems = () => async (dispatch) => {
   const token = process.env.REACT_APP_YELP_KEY
+  const url = 'https://api.yelp.com/v3/businesses/search?term=deli&longitude=-98.491142&latitude=29.424349'
   const config = {
     headers: {
-      'Authorization': `Bearer ${token}`,
+      'Authorization': ` Bearer ${token}`,
+      "accept": "application/json",
+      "x-requested-with": "xmlhttprequest",
+      "Access-Control-Allow-Origin":"*",
+
     }
+    // body: JSON.stringify(),
+    // proxy: "http://localhost:3000/"
   }
   try {
-    const res = await axios.get('https://api.yelp.com/v3/businesses/search?term=deli&longitude=-98.491142&latitude=29.424349', config)
-    
-    console.log(res.data)
+     let res = await axios.get(url , config)
+     console.log(res.data)
     dispatch({
       type: `GET_YELP`,
       payload: res.data
     })
   } catch (error) {
-    console.log(`Yelp EROROR`)
+    console.log(`YELP ERROR`)
   }
 }
