@@ -13,13 +13,15 @@ const runInitialState = {
 
 
 export const getRuns = (state = runInitialState, action ) => {
+  // const { payload } = action
+  console.log(`reducerssss`);
   switch(action.type){
     case `GET_RUNS`: 
     return  {
       ...state,
-      arr: action.payload,
+      arr: action.payload.filter((v, i) => i <= 11),
       loading: false
-    }
+    };
     default: return state
   }
 }

@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { getRuns } from '../redux/actions'
 
 const mapStateToProps = state => ({
-  test: state.test,
   runs: state.runs
 })
 

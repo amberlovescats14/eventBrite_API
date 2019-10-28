@@ -21,15 +21,15 @@ const EventBrite = (props) => {
   const classes = useStyles();
   useEffect(()=> {
     getRuns()
-  }, [getRuns])
+    console.log(`EFFECT`)
+  }, [])
   return (
     <div>
       <h1>eventbrite</h1>
       <Paper className={classes.root}>
         <Typography>HI</Typography>
       </Paper>
-      {console.log(arr.events)}
-
+      {console.log(`in component: `, runs.arr)}
     
     </div>
   )

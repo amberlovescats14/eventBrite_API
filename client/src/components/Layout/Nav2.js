@@ -1,13 +1,13 @@
 import React from 'react'
 import { 
-  AppBar, Toolbar, Inc, IconButton, Typography, Hidden, Drawer, ListItemText, ListItem, Divider
+  AppBar, Toolbar, Inc, IconButton, Typography, Hidden, Drawer, ListItemText, ListItem, Divider, List
 } from '@material-ui/core'
-import { 
-  MailIcon, ListItemIcon, InboxIcon, 
-} from '@material-ui/icons';
+import HomeIcon from '@material-ui/icons/Home';
+import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import {Link} from 'react-router-dom'
 
 
 const drawerWidth = 240;
@@ -45,7 +45,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Nav2 = (props) => {
-  const { container } = props;
+  const { container, children } = props;
+  console.log(`children: `, children)
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -56,8 +57,32 @@ const Nav2 = (props) => {
   const drawer = (
     <div>
       <div className={classes.toolbar} />
-      Hello
-      <Divider />
+      <List>
+
+          <ListItem button >
+            <HomeIcon/>
+            <ListItemText >
+            <Link to='/'>Home</Link>
+            </ListItemText>
+          </ListItem>
+          <Divider />
+
+          <ListItem button >
+            <DirectionsRunIcon/>
+            <ListItemText >
+            <Link to='/eventbrite'>EventBrite API</Link>
+            </ListItemText>
+          </ListItem>
+          <Divider />
+
+          <ListItem button >
+            <DirectionsRunIcon/>
+            <ListItemText >
+            <Link to='/yelp'>Yelp</Link>
+            </ListItemText>
+          </ListItem>
+             </List>
+
 
     </div>
   );
@@ -111,7 +136,7 @@ const Nav2 = (props) => {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-            {/* {children} */}
+            {children}
       </main>
     </div>
   )
