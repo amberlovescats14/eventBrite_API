@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Animation from './animation/Animation'
 const Landing = () => {
   return (
     <div>
-      <h1>Landing</h1>
+      <Animation/>
     </div>
   )
 }
