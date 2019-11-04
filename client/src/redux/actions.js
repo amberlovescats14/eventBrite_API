@@ -6,7 +6,7 @@ export const getRuns = () => async (dispatch) => {
   console.log(`E-TOKEN: `, token)
 
   try {
-    const res = await axios.get(`https://cors-anywhere.herokuapp.com/https://www.eventbriteapi.com/v3/events/search/?sort_by=date&location.address=6307+Donely+pl%2C+san+antonio%2Ctx&location.within=20mi&categories=108&subcategories=8001&start_date.range_start=2019-08-01T01%3A01%3A00Z&start_date.range_end=2020-08-31T01%3A01%3A00Z&token=${token}`)
+    const res = await axios.get(`https://www.eventbriteapi.com/v3/events/search/?sort_by=date&location.address=6307+Donely+pl%2C+san+antonio%2Ctx&location.within=20mi&categories=108&subcategories=8001&start_date.range_start=2019-08-01T01%3A01%3A00Z&start_date.range_end=2020-08-31T01%3A01%3A00Z&token=${token}`)
     console.log(`RUNS: `, res.data)
     console.log(`MADE IT TO ACTION`);
     dispatch({

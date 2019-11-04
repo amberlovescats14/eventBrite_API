@@ -29,6 +29,11 @@ const EventBrite = (props) => {
         <Typography>HI</Typography>
       </Paper>
       {console.log(`in component: `, runs.arr)}
+      {arr.map((a,i)=> (
+        <Paper>
+          <Typography variant='h4'>{a.name.html}</Typography>
+        </Paper>
+      ))}
     
     </div>
   )

@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom'
 import { Switch, Route} from 'react-router-dom'
-import Nav from './components/Layout/Nav'
 import EventBriteContainer from './containers/EventBriteContainer'
 import Yelp from './containers/YelpContainer'
 import Nav2 from './components/Layout/Nav2'
