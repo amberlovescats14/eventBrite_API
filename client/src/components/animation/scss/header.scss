@@ -1,4 +1,6 @@
 #cat {
+  padding: 0 !important;
+  margin: auto;
   background: #000;
   overflow: hidden;
   display: flex;
@@ -142,9 +144,10 @@
     left: 50%;
     width: 100%;
     transform: translateZ(360px) translate(-50%, -50%);
-    font-size: 1.5rem;
+    font-size: 1 rem;
     text-align: center;
     font-family: 'Wendy One', sans-serif;
+
   }
   
   .birdposition {
