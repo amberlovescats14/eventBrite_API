@@ -4,7 +4,7 @@ const Yelp = (props) => {
   const {yelp, getSearchItems} = props
   useEffect(()=> {
     getSearchItems()
-  }, [])
+  }, )
   console.log(`yelping: `, yelp)
   return (
     <div>

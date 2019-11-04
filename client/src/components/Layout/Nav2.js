@@ -1,6 +1,6 @@
 import React from 'react'
 import { 
-  AppBar, Toolbar, Inc, IconButton, Typography, Hidden, Drawer, ListItemText, ListItem, Divider, List
+  AppBar, Toolbar, IconButton, Typography, Hidden, Drawer, ListItemText, ListItem, Divider, List
 } from '@material-ui/core'
 import HomeIcon from '@material-ui/icons/Home';
 import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';

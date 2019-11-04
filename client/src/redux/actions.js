@@ -3,10 +3,10 @@ import axios from 'axios'
 
 export const getRuns = () => async (dispatch) => {
   const token = process.env.REACT_APP_EVENTBRITE_TOKEN
-  console.log(`TOKEN: `, token)
+  console.log(`E-TOKEN: `, token)
 
   try {
-    const res = await axios.get(`https://www.eventbriteapi.com/v3/events/search/?sort_by=date&location.address=6307+Donely+pl%2C+san+antonio%2Ctx&location.within=20mi&categories=108&subcategories=8001&start_date.range_start=2019-08-01T01%3A01%3A00Z&start_date.range_end=2019-08-31T01%3A01%3A00Z&token=${token}`)
+    const res = await axios.get(`https://cors-anywhere.herokuapp.com/https://www.eventbriteapi.com/v3/events/search/?sort_by=date&location.address=6307+Donely+pl%2C+san+antonio%2Ctx&location.within=20mi&categories=108&subcategories=8001&start_date.range_start=2019-08-01T01%3A01%3A00Z&start_date.range_end=2020-08-31T01%3A01%3A00Z&token=${token}`)
     console.log(`RUNS: `, res.data)
     console.log(`MADE IT TO ACTION`);
     dispatch({
@@ -21,7 +21,9 @@ export const getRuns = () => async (dispatch) => {
 
 export const getSearchItems = () => async (dispatch) => {
   const token = process.env.REACT_APP_YELP_KEY
+  console.log(`y-token: `, token)
   const url = `https://api.yelp.com/v3/businesses/search?term=deli&longitude=-98.491142&latitude=29.424349`
+  // const corsURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=deli&longitude=-98.491142&latitude=29.424349`
   const config = {
     headers: {
       'Authorization': ` Bearer ${token}`,
@@ -32,7 +34,7 @@ export const getSearchItems = () => async (dispatch) => {
     }
   }
   try {
-     let res = await axios.get(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=deli&longitude=-98.491142&latitude=29.424349`, config )
+     let res = await axios.get(url, config )
      console.log(res.data)
     dispatch({
       type: `GET_YELP`,

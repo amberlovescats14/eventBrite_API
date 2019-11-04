@@ -21,7 +21,6 @@ const EventBrite = (props) => {
   const classes = useStyles();
   useEffect(()=> {
     getRuns()
-    console.log(`EFFECT`)
   }, [])
   return (
     <div>
