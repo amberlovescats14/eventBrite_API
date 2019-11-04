@@ -44,3 +44,7 @@ export const getSearchItems = () => async (dispatch) => {
     console.log(`YELP ERROR`)
   }
 }
+
+//109,105,110,116,120
+
+//115
